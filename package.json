@@ -1,0 +1,24 @@
+{
+  "name": "ghost-mtg",
+  "version": "1.0.0",
+  "description": "Ghost customization for having responsive MtG deck lists in blog posts.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sten626/ghost-mtg.git"
+  },
+  "keywords": [
+    "ghost",
+    "blog",
+    "mtg",
+    "deck",
+    "decklist",
+    "sass",
+    "js"
+  ],
+  "author": "Steven Indzeoski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sten626/ghost-mtg/issues"
+  },
+  "homepage": "https://github.com/sten626/ghost-mtg#readme"
+}
