@@ -6,7 +6,7 @@
 
   header {
     border-bottom: 1px solid $light-grey;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.5em;
   }
 
   li {
@@ -20,5 +20,17 @@
   ul {
     margin-bottom: 1em;
     padding-left: 0.3em;
+  }
+}
+
+.decklist__column {
+  @media #{$medium} {
+    float: left;
+    margin: 0 0.3em;
+    width: 50%;
+  }
+
+  @media #{$large} {
+    width: 33%;
   }
 }

@@ -43,7 +43,10 @@ rules:
   force-pseudo-nesting: 1
 
   # Name Formats
-  class-name-format: 1
+  class-name-format:
+    - 1
+    -
+      convention: 'strictbem'
   function-name-format: 1
   id-name-format: 0
   mixin-name-format: 1
