@@ -1,3 +1,24 @@
-.decklist main {
-  @extend %clearfix;
+.decklist {
+  border: 1px solid $light-grey;
+  border-radius: $border-radius;
+  margin: 1em;
+  padding: 1em;
+
+  header {
+    border-bottom: 1px solid $light-grey;
+    margin-bottom: .3em;
+  }
+
+  li {
+    margin: 0;
+  }
+
+  main {
+    @extend %clearfix;
+  }
+
+  ul {
+    margin-bottom: 1em;
+    padding-left: .3em;
+  }
 }
