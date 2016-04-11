@@ -4,6 +4,15 @@
   margin: 1em;
   padding: 1em;
 
+  * {
+    box-sizing: border-box;
+
+    &:before,
+    &:after {
+      box-sizing: border-box;
+    }
+  }
+
   header {
     border-bottom: 1px solid $light-grey;
     margin-bottom: 0.5em;
@@ -26,11 +35,42 @@
 .decklist__column {
   @media #{$medium} {
     float: left;
-    margin: 0 0.3em;
+    padding: 0 0.3em;
     width: 50%;
   }
 
   @media #{$large} {
     width: 33%;
+  }
+}
+
+.decklist__image {
+  padding: 0 0.3em;
+
+  @media #{$medium} {
+
+  }
+
+  @media #{$large} {
+    float: left;
+    width: 33%;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.medium-view-cf {
+  @extend %clearfix;
+
+  display: none;
+
+  @media #{$medium} {
+    display: block;
+  }
+
+  @media #{$large} {
+    display: none;
   }
 }
