@@ -40,6 +40,16 @@
   $('card').each(function() {
     var cardName = $(this).html();
     $(this).html(cardNameToLink(cardName));
+    var cardImageSrc = GATHERER_IMAGE_URL + '&name=' + encodeURIComponent(cardName);
+    $(this).append('<img src="' + cardImageSrc + '">');
+  });
+
+  $('card').mouseover(function() {
+    $(this).find('img').show();
+  });
+
+  $('card').mouseout(function() {
+    $(this).find('img').hide();
   });
 
   $('.decklist li').mouseover(function() {
