@@ -8,6 +8,14 @@
   var GATHERER_SEARCH_URL = 'http://gatherer.wizards.com/pages/search/' +
       'default.aspx';
 
+  function cardNameToLink(cardName) {
+    var param = 'name=' + encodeURIComponent('+["' + cardName + '"]');
+    var cardLink = GATHERER_SEARCH_URL + '?' + param;
+    var cardLinkTag = '<a href="' + cardLink + '" target="_blank">' + cardName + '</a>';
+
+    return cardLinkTag;
+  }
+
   if (!$) {
     console.log('jQuery missing. Exiting.');
     return;
@@ -18,11 +26,9 @@
     var result = DECK_LI_REGEX.exec(li);
     var num = result[1];
     var cardName = result[2];
-    var param = 'name=' + encodeURIComponent('+["' + cardName + '"]');
-    var cardLink = GATHERER_SEARCH_URL + '?' + param;
+    var cardLinkTag = cardNameToLink(cardName);
 
-    $(this).html(num + ' <a href="' + cardLink + '" target="_blank">' +
-        cardName + '</a>');
+    $(this).html(num + ' ' + cardLinkTag);
     $(this).attr('data-name', cardName);
 
     if (index === 0) {
