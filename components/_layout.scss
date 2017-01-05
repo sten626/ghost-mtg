@@ -1,3 +1,18 @@
+.post-content {
+  card {
+    img {
+      display: none;
+      max-width: 150px;
+      position: absolute;
+      z-index: 100;
+
+      @media #{$large} {
+        max-width: 126%;
+      }
+    }
+  }
+}
+
 .decklist {
   border: 1px solid $light-grey;
   border-radius: $border-radius;
@@ -7,8 +22,8 @@
   * {
     box-sizing: border-box;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       box-sizing: border-box;
     }
   }
@@ -46,10 +61,6 @@
 
 .decklist__image {
   padding: 0 0.3em;
-
-  @media #{$medium} {
-
-  }
 
   @media #{$large} {
     float: left;
