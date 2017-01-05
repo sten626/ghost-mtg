@@ -1,5 +1,20 @@
+.post-content {
+  card {
+    img {
+      display: none;
+      max-width: 150px;
+      position: absolute;
+      z-index: 100;
+
+      @media #{$large} {
+        max-width: 126%;
+      }
+    }
+  }
+}
+
 .decklist {
-  border: 1px solid $light-grey;
+  border: 1px solid $border-dark;
   border-radius: $border-radius;
   margin: 1em;
   padding: 1em;
@@ -7,14 +22,14 @@
   * {
     box-sizing: border-box;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       box-sizing: border-box;
     }
   }
 
   header {
-    border-bottom: 1px solid $light-grey;
+    border-bottom: 1px solid $border-dark;
     margin-bottom: 0.5em;
   }
 
@@ -47,10 +62,6 @@
 .decklist__image {
   padding: 0 0.3em;
 
-  @media #{$medium} {
-
-  }
-
   @media #{$large} {
     float: left;
     width: 33%;
@@ -59,6 +70,11 @@
       max-width: 100%;
     }
   }
+}
+
+.decklist__sideboard {
+  background-color: $light-grey;
+  padding: 0.3em;
 }
 
 .medium-view-cf {

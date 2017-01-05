@@ -1,11 +1,64 @@
 # ghost-mtg
 Ghost customization for having responsive MtG deck lists in blog posts.
 
+## Usage Example
+
+To use with Ghost, you must first compile the Sass files. Once compiled, copy `ghost-mtg.css` and `ghost-mtg.js` to the `css` and `js` folders of your theme directory. Once in your theme folder, go to Ghost's Code Injection settings and reference the css file in the header and the js file in the footer. Then you can create decklists in posts with html using the following format:
+
+    <figure class="decklist">
+        <header>
+            <h4>Deck Name</h4>
+            <h5>Player Name</h5>
+        </header>
+        <main>
+            <section class="decklist__column">
+                <section>
+                    <h6>Creatures</h6>
+                    <ul>
+                        <li>4 Kitchen Finks</li>
+                        <li>2 Anafenza, Kin-Tree Spirit</li>
+                        ...
+                    </ul>
+                </section>
+                <section>
+                    <h6>Lands</h6>
+                    <ul>
+                        <li>3 Gavony Township</li>
+                        <li>2 Temple Garden</li>
+                        ...
+                    </ul>
+                </section>
+            </section>
+            <section class="decklist__column">
+                <section>
+                    <h6>Spells</h6>
+                    <ul>
+                        <li>4 Chord of Calling</li>
+                        <li>4 Collected Company</li>
+                        ...
+                    </ul>
+                </section>
+                <section class="decklist__sideboard">
+                    <h6>Sideboard</h6>
+                    <ul>
+                        <li>3 Path to Exile</li>
+                        <li>1 Reclamation Sage</li>
+                        ...
+                    </ul>
+                </section>
+            </section>
+            <div class="medium-view-cf"></div>
+            <section class="decklist__image"></section>
+        </main>
+    </figure>
+
+The four sections (Creatures, Spells, Lands, Sideboard) can be arranged in whichever way works best between the two `decklist__column` sections.
+
 ## Copyright & License
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Steven Indzeoski
+Copyright (c) 2017 Steven Indzeoski
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
