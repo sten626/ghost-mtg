@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Created CHANGELOG.
 
+### Changed
+- Updated the year in README.
+
 ## 1.0 - 2017-01-05
 ### Added
 - Initial release.
