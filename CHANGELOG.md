@@ -11,9 +11,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added example deck list to the README file.
 - Functionality to turn card names through the post into links with the `<card>` tag.
 - Card image appears when hovering over `<card>` tags.
+- Background colour on sideboard area.
 
 ### Changed
 - Updated the year in README.
+- Decklist border colour.
+- Made decklist font size slightly smaller.
 
 ### Removed
 - Deleted the `test-list.html` file since I added an example to the README.

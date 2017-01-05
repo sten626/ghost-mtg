@@ -1,5 +1,8 @@
 // Colours
-$light-grey: #9eabb3;
+$border-dark: #ddd;
+$border-light: #eee;
+$grey: #bbb;
+$light-grey: lighten($grey, 10%);
 
 // Border Radius
 $border-radius: 5px;

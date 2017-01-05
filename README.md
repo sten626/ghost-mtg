@@ -38,7 +38,7 @@ To use with Ghost, you must first compile the Sass files. Once compiled, copy `g
                         ...
                     </ul>
                 </section>
-                <section>
+                <section class="decklist__sideboard">
                     <h6>Sideboard</h6>
                     <ul>
                         <li>3 Path to Exile</li>
