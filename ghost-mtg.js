@@ -37,6 +37,11 @@
     }
   });
 
+  $('card').each(function() {
+    var cardName = $(this).html();
+    $(this).html(cardNameToLink(cardName));
+  });
+
   $('.decklist li').mouseover(function() {
     var name = $(this).attr('data-name');
     var src = GATHERER_IMAGE_URL + '&name=' + encodeURIComponent(name);

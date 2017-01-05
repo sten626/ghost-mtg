@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Created CHANGELOG.
 - Added example deck list to the README file.
+- Functionality to turn card names through the post into links with the `<card>` tag.
 
 ### Changed
 - Updated the year in README.
