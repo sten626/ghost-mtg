@@ -16,9 +16,18 @@
     "js"
   ],
   "author": "Steven Indzeoski",
+  "scripts": {
+    "css": "npm-run-all css-lint",
+    "css-lint": "sass-lint"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sten626/ghost-mtg/issues"
   },
-  "homepage": "https://github.com/sten626/ghost-mtg#readme"
+  "homepage": "https://github.com/sten626/ghost-mtg#readme",
+  "devDependencies": {
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
+    "sass-lint": "^1.10.2"
+  }
 }
