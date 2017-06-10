@@ -17,7 +17,8 @@
   ],
   "author": "Steven Indzeoski",
   "scripts": {
-    "css": "npm-run-all css-lint",
+    "css": "npm-run-all css-lint css-compile",
+    "css-compile": "node-sass --output-style expanded --source-map true --precision 6 scss/main.scss dist/css/ghost-mtg.css",
     "css-lint": "sass-lint"
   },
   "license": "MIT",
