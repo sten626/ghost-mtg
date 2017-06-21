@@ -22,8 +22,10 @@
     "css-lint": "sass-lint",
     "css-minify": "cleancss --source-map --output dist/css/ghost-mtg.min.css dist/css/ghost-mtg.css",
     "css-prefix": "postcss --replace dist/css/*.css",
-    "js": "npm-run-all js-lint",
-    "js-lint": "eslint js/"
+    "js": "npm-run-all js-lint js-compile js-minify",
+    "js-compile": "cp js/ghost-mtg.js dist/js/",
+    "js-lint": "eslint js/",
+    "js-minify": "uglifyjs dist/js/ghost-mtg.js --compress --mangle --comments --output dist/js/ghost-mtg.min.js"
   },
   "license": "MIT",
   "bugs": {
@@ -37,6 +39,7 @@
     "node-sass": "^4.5.3",
     "npm-run-all": "^4.0.2",
     "postcss-cli": "^4.1.0",
-    "sass-lint": "^1.10.2"
+    "sass-lint": "^1.10.2",
+    "uglify-js": "^3.0.18"
   }
 }
