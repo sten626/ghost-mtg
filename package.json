@@ -17,9 +17,10 @@
   ],
   "author": "Steven Indzeoski",
   "scripts": {
-    "css": "npm-run-all css-lint css-compile css-prefix",
+    "css": "npm-run-all css-lint css-compile css-prefix css-minify",
     "css-compile": "node-sass --output-style expanded --source-map true --precision 6 scss/main.scss dist/css/ghost-mtg.css",
     "css-lint": "sass-lint",
+    "css-minify": "cleancss --source-map --output dist/css/ghost-mtg.min.css dist/css/ghost-mtg.css",
     "css-prefix": "postcss --replace dist/css/*.css"
   },
   "license": "MIT",
@@ -29,6 +30,7 @@
   "homepage": "https://github.com/sten626/ghost-mtg#readme",
   "devDependencies": {
     "autoprefixer": "^7.1.1",
+    "clean-css-cli": "^4.1.5",
     "node-sass": "^4.5.3",
     "npm-run-all": "^4.0.2",
     "postcss-cli": "^4.1.0",
