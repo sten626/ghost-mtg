@@ -19,11 +19,13 @@
 }
 
 .decklist * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .decklist *::before, .decklist *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .decklist header {
@@ -107,5 +109,4 @@
 .decklist main:after, .medium-view-cf:after {
   clear: both;
 }
-
 /*# sourceMappingURL=ghost-mtg.css.map */
