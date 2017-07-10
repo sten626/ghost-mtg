@@ -45,5 +45,8 @@
     "postcss-cli": "^4.1.0",
     "sass-lint": "^1.10.2",
     "uglify-js": "^3.0.18"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
   }
 }
