@@ -7,8 +7,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [1.1.0] - 2017-01-05
 ### Added
+
+- Scripts for compiling, linting, and minifying scss and js.
+- Watch scripts for both scss and js.
+- A `dist` folder that contains compiled source.
+
+### Changed
+
+- Reorganised source into `js` and `scss` folders.
+
+## [1.1.0] - 2017-01-05
+
+### Added
+
 - Created CHANGELOG.
 - Added example deck list to the README file.
 - Functionality to turn card names through the post into links with the `<card>` tag.
@@ -16,15 +28,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Background colour on sideboard area.
 
 ### Changed
+
 - Updated the year in README.
 - Decklist border colour.
 - Made decklist font size slightly smaller.
 
 ### Removed
+
 - Deleted the `test-list.html` file since I added an example to the README.
 
 ## 1.0.0 - 2017-01-05
+
 ### Added
+
 - Initial release.
 - Allows user to import JS and CSS files to their Ghost theme and then include nicely formatted decklists in their posts.
 - Hovering over a card in the decklist on desktop will update the card preview, while clicking on the name will open Gatherer in a new tab.
