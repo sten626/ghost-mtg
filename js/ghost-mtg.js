@@ -17,8 +17,7 @@
   }
 
   if (!$) {
-    console.log('jQuery missing. Exiting.');
-    return;
+    throw 'jQuery missing. Exiting.';
   }
 
   $('.decklist li').each(function(index) {

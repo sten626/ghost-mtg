@@ -1,6 +1,6 @@
 {
   "name": "ghost-mtg",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Ghost customization for having responsive MtG deck lists in blog posts.",
   "repository": {
     "type": "git",
@@ -16,9 +16,37 @@
     "js"
   ],
   "author": "Steven Indzeoski",
+  "scripts": {
+    "css": "npm-run-all css-lint css-compile css-prefix css-minify",
+    "css-compile": "node-sass --output-style expanded --source-map true --precision 6 scss/main.scss dist/css/ghost-mtg.css",
+    "css-lint": "sass-lint",
+    "css-minify": "cleancss --source-map --output dist/css/ghost-mtg.min.css dist/css/ghost-mtg.css",
+    "css-prefix": "postcss --replace dist/css/*.css",
+    "js": "npm-run-all js-lint js-compile js-minify",
+    "js-compile": "cp js/ghost-mtg.js dist/js/",
+    "js-lint": "eslint js/",
+    "js-minify": "uglifyjs dist/js/ghost-mtg.js --compress --mangle --comments --output dist/js/ghost-mtg.min.js",
+    "watch": "npm-run-all --parallel watch-css watch-js",
+    "watch-css": "nodemon --ignore js/ --ignore dist -e scss -x \"npm run css\"",
+    "watch-js": "nodemon --ignore scss/ --ignore dist/ -e js -x \"npm run js\""
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sten626/ghost-mtg/issues"
   },
-  "homepage": "https://github.com/sten626/ghost-mtg#readme"
+  "homepage": "https://github.com/sten626/ghost-mtg#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "clean-css-cli": "^4.1.5",
+    "eslint": "^4.0.0",
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.2",
+    "postcss-cli": "^4.1.0",
+    "sass-lint": "^1.10.2",
+    "uglify-js": "^3.0.18"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
 }
