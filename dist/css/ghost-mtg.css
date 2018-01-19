@@ -11,6 +11,10 @@
   }
 }
 
+decklist {
+  width: 90%;
+}
+
 .decklist {
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -95,6 +99,11 @@
   font-size: 1.4rem;
   line-height: 1.75em;
   list-style: none;
+}
+
+.decklist li.decklist__section-header {
+  font-weight: bold;
+  padding: 0.3em 0 0.3em 0;
 }
 
 .decklist main, .medium-view-cf {

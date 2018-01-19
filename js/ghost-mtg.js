@@ -20,57 +20,103 @@
     throw 'jQuery missing. Exiting.';
   }
 
-  $('.decklist li').each(function(index) {
-    var li = $(this).html();
-    var result = DECK_LI_REGEX.exec(li);
-    var num = result[1];
-    var cardName = result[2];
-    var cardLinkTag = cardNameToLink(cardName);
+  var $decklist = $('decklist');
 
-    $(this).html(num + ' ' + cardLinkTag);
-    $(this).attr('data-name', cardName);
+  var headers = [];
+  var sections = [];
 
-    if (index === 0) {
-      $('.decklist__image').append('<img src="' + GATHERER_IMAGE_URL +
-          '&name=' + encodeURIComponent(cardName) + '">');
-    }
+  $decklist.find('p').each(function() {
+    var header = $(this).text();
+    headers.push(header);
   });
 
-  $('card').each(function() {
-    var cardName = $(this).html();
-    $(this).html(cardNameToLink(cardName));
-    var cardImageSrc = GATHERER_IMAGE_URL + '&name=' + encodeURIComponent(cardName);
-    $(this).append('<img src="' + cardImageSrc + '">');
+  $decklist.find('ul').each(function() {
+    var section = $(this).html();
+    section = section.replace('<br>', '');
+    sections.push(section);
   });
 
-  $('card').mouseover(function() {
-    $(this).find('img').show();
-  });
+  if (headers.length !== sections.length) {
+    throw 'Number of decklist headers differs from number of decklist sections.';
+  }
 
-  $('card').mouseout(function() {
-    $(this).find('img').hide();
-  });
+  var $firstList = $('<ul></ul>');
+  $firstList.append('<li class="decklist__section-header">' + headers[0] + '</li>');
+  $firstList.append(sections[0]);
+  $firstList.append('<li class="decklist__section-header">' + headers[1] + '</li>');
+  $firstList.append(sections[1]);
 
-  $('.decklist li').mouseover(function() {
-    var name = $(this).attr('data-name');
-    var src = GATHERER_IMAGE_URL + '&name=' + encodeURIComponent(name);
+  var $firstColumn = $('<section class="decklist__column"></section>');
+  $firstColumn.append($firstList);
 
-    $('.decklist__image img').attr('src', src);
-  });
+  
+  var $secondList = $('<ul></ul>');
+  $secondList.append('<li class="decklist__section-header">' + headers[2] + '</li>');
+  $secondList.append(sections[2]);
 
-  $('.decklist li').on('touchstart', function() {
-    if (!$(this).attr('data-touched')) {
-      $('.decklist li').removeAttr('data-touched');
-      $(this).attr('data-touched', 'touched');
-    }
-  });
+  var $secondColumn = $('<section class="decklist__column"></section>');
+  $secondColumn.append($secondList);
 
-  $('.decklist a').click(function(event) {
-    if ($(this).parent().attr('data-touched') === 'touched') {
-      event.preventDefault();
-      $(this).parent().attr('data-touched', 'hover');
-    } else {
-      $(this).parent().removeAttr('data-touched');
-    }
-  });
+  var $main = $('<main></main>');
+  $main.append($firstColumn);
+  $main.append($secondColumn);
+
+  var $figure = $('<figure class="decklist"></figure>');
+  $figure.append($main);
+
+  $decklist.html($figure);
+
+  // $('.decklist li').each(function(index) {
+  //   var li = $(this).html();
+  //   var result = DECK_LI_REGEX.exec(li);
+  //   var num = result[1];
+  //   var cardName = result[2];
+  //   var cardLinkTag = cardNameToLink(cardName);
+
+  //   $(this).html(num + ' ' + cardLinkTag);
+  //   $(this).attr('data-name', cardName);
+
+  //   if (index === 0) {
+  //     $('.decklist__image').append('<img src="' + GATHERER_IMAGE_URL +
+  //         '&name=' + encodeURIComponent(cardName) + '">');
+  //   }
+  // });
+
+  // $('card').each(function() {
+  //   var cardName = $(this).html();
+  //   $(this).html(cardNameToLink(cardName));
+  //   var cardImageSrc = GATHERER_IMAGE_URL + '&name=' + encodeURIComponent(cardName);
+  //   $(this).append('<img src="' + cardImageSrc + '">');
+  // });
+
+  // $('card').mouseover(function() {
+  //   $(this).find('img').show();
+  // });
+
+  // $('card').mouseout(function() {
+  //   $(this).find('img').hide();
+  // });
+
+  // $('.decklist li').mouseover(function() {
+  //   var name = $(this).attr('data-name');
+  //   var src = GATHERER_IMAGE_URL + '&name=' + encodeURIComponent(name);
+
+  //   $('.decklist__image img').attr('src', src);
+  // });
+
+  // $('.decklist li').on('touchstart', function() {
+  //   if (!$(this).attr('data-touched')) {
+  //     $('.decklist li').removeAttr('data-touched');
+  //     $(this).attr('data-touched', 'touched');
+  //   }
+  // });
+
+  // $('.decklist a').click(function(event) {
+  //   if ($(this).parent().attr('data-touched') === 'touched') {
+  //     event.preventDefault();
+  //     $(this).parent().attr('data-touched', 'hover');
+  //   } else {
+  //     $(this).parent().removeAttr('data-touched');
+  //   }
+  // });
 })(jQuery);
