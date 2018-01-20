@@ -22,12 +22,25 @@
 
   var $decklist = $('decklist');
 
+  var deckName = '';
+  var deckAuthor = '';
   var headers = [];
   var sections = [];
 
-  $decklist.find('p').each(function() {
+  $decklist.find('p').each(function(index) {
     var header = $(this).text();
-    headers.push(header);
+
+    if (index === 0) {
+      if (header.toLowerCase() !== 'none') {
+        deckName = header;
+      }
+    } else if (index === 1) {
+      if (header.toLowerCase() !== 'none') {
+        deckAuthor = header;
+      }
+    } else {
+      headers.push(header);
+    }
   });
 
   $decklist.find('ul').each(function() {
@@ -39,6 +52,16 @@
   if (headers.length !== sections.length) {
     throw 'Number of decklist headers differs from number of decklist sections.';
   }
+
+  if (headers.length !== 4) {
+    throw 'Locked in to 4 sections right now.';
+  }
+
+  var $deckName = $('<p class="decklist__name">' + deckName + '</p>');
+  var $deckAuthor = $('<p class="decklist__author">' + deckAuthor + '</p>');
+  var $header = $('<header></header>');
+  $header.append($deckName);
+  $header.append($deckAuthor);
 
   var $firstList = $('<ul></ul>');
   $firstList.append('<li class="decklist__section-header">' + headers[0] + '</li>');
@@ -67,6 +90,7 @@
   $main.append($secondColumn);
 
   var $figure = $('<figure class="decklist"></figure>');
+  $figure.append($header);
   $figure.append($main);
 
   $decklist.html($figure);
