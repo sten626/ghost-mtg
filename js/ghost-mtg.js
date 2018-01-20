@@ -54,8 +54,13 @@
   $secondList.append('<li class="decklist__section-header">' + headers[2] + '</li>');
   $secondList.append(sections[2]);
 
+  var $sideboard = $('<ul class="decklist__sideboard"></ul>');
+  $sideboard.append('<li class="decklist__section-header">' + headers[3] + '</li>');
+  $sideboard.append(sections[3]);
+
   var $secondColumn = $('<section class="decklist__column"></section>');
   $secondColumn.append($secondList);
+  $secondColumn.append($sideboard);
 
   var $main = $('<main></main>');
   $main.append($firstColumn);

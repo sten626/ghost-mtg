@@ -14,14 +14,17 @@
 }
 
 decklist {
-  width: 90%;
+  width: 100%;
+
+  @media #{$medium} {
+    width: 90%;
+  }
 }
 
 .decklist {
   border: 1px solid $border-dark;
   border-radius: $border-radius;
-  margin: 1em;
-  padding: 1em;
+  padding: 0.3em;
 
   * {
     box-sizing: border-box;
@@ -46,7 +49,7 @@ decklist {
   }
 
   ul {
-    margin-bottom: 1em;
+    margin-bottom: 0;
     padding-left: 0.3em;
   }
 }
@@ -76,9 +79,14 @@ decklist {
   }
 }
 
+.decklist__section-header {
+  padding: 0.3em 0;
+}
+
 .decklist__sideboard {
   background-color: $light-grey;
-  padding: 0.3em;
+  margin: 0.3em;
+  padding: 0 0.1em 0.1em 0.1em;
 }
 
 .medium-view-cf {
