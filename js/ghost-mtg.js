@@ -88,11 +88,13 @@
   $secondColumn.append($secondList);
   $secondColumn.append($sideboard);
 
+  var $decklistImage = $('<section class="decklist__image"></section>');
+
   var $main = $('<main></main>');
   $main.append($firstColumn);
   $main.append($secondColumn);
   $main.append('<div class="medium-view-cf"></div>');
-  $main.append('<section class="decklist__image"></section>');
+  $main.append($decklistImage);
 
   var $figure = $('<figure class="decklist"></figure>');
   $figure.append($header);
@@ -101,6 +103,8 @@
   $decklist.html($figure);
 
   // Turn card names into links with hover functionality.
+
+  var first = true;
 
   $decklist.find('li').each(function() {
     var li = $(this).html();
@@ -117,6 +121,18 @@
 
     $(this).html(num + ' ' + cardNameLinkTag);
     $(this).attr('data-name', cardName);
+
+    if (first) {
+      $decklistImage.append('<img src="' + GATHERER_IMAGE_URL + '&name=' + encodeURIComponent(cardName) + '">');
+      first = false;
+    }
+  });
+
+  $decklist.find('li').mouseover(function() {
+    var name = $(this).attr('data-name');
+    var src = GATHERER_IMAGE_URL + '&name=' + encodeURIComponent(name);
+
+    $('.decklist__image img').attr('src', src);
   });
 
   // $('.decklist li').each(function(index) {
