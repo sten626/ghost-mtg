@@ -116,6 +116,12 @@ decklist {
   list-style: none;
 }
 
+.decklist li a {
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+  vertical-align: middle;
+}
+
 .decklist li.decklist__section-header {
   font-weight: bold;
 }

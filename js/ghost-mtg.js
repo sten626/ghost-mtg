@@ -46,6 +46,7 @@
   $decklist.find('ul').each(function() {
     var section = $(this).html();
     section = section.replace('<br>', '');
+    section = section.replace(/(\r\n|\n|\r)/gm, '');
     sections.push(section);
   });
 
@@ -56,6 +57,8 @@
   if (headers.length !== 4) {
     throw 'Locked in to 4 sections right now.';
   }
+
+  // Convert what's in the <decklist> tag to the actual decklist.
 
   var $deckName = $('<p class="decklist__name">' + deckName + '</p>');
   var $deckAuthor = $('<p class="decklist__author">' + deckAuthor + '</p>');
@@ -88,12 +91,33 @@
   var $main = $('<main></main>');
   $main.append($firstColumn);
   $main.append($secondColumn);
+  $main.append('<div class="medium-view-cf"></div>');
+  $main.append('<section class="decklist__image"></section>');
 
   var $figure = $('<figure class="decklist"></figure>');
   $figure.append($header);
   $figure.append($main);
 
   $decklist.html($figure);
+
+  // Turn card names into links with hover functionality.
+
+  $decklist.find('li').each(function() {
+    var li = $(this).html();
+    var result = DECK_LI_REGEX.exec(li);
+
+    if (!result) {
+      // Probably a header, continue.
+      return true;
+    }
+
+    var num = result[1];
+    var cardName = result[2];
+    var cardNameLinkTag = cardNameToLink(cardName);
+
+    $(this).html(num + ' ' + cardNameLinkTag);
+    $(this).attr('data-name', cardName);
+  });
 
   // $('.decklist li').each(function(index) {
   //   var li = $(this).html();
