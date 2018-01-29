@@ -2,64 +2,68 @@
 
 Ghost customization for having responsive MtG deck lists in blog posts.
 
-## Usage Example
+## Installing
 
-To use with Ghost, you must first compile the Sass files. Once compiled, copy `ghost-mtg.css` and `ghost-mtg.js` to the `css` and `js` folders of your theme directory. Once in your theme folder, go to Ghost's Code Injection settings and reference the css file in the header and the js file in the footer. Then you can create decklists in posts with html using the following format:
+To use with Ghost, copy `ghost-mtg.min.css` and `ghost-mtg.min.js` to the `css` and `js` folders of your theme directory. Once in your theme folder, go to Ghost's Code Injection settings and reference the ghost-mtg files. 
 
-    <figure class="decklist">
-        <header>
-            <h4>Deck Name</h4>
-            <h5>Player Name</h5>
-        </header>
-        <main>
-            <section class="decklist__column">
-                <section>
-                    <h6>Creatures</h6>
-                    <ul>
-                        <li>4 Kitchen Finks</li>
-                        <li>2 Anafenza, Kin-Tree Spirit</li>
-                        ...
-                    </ul>
-                </section>
-                <section>
-                    <h6>Lands</h6>
-                    <ul>
-                        <li>3 Gavony Township</li>
-                        <li>2 Temple Garden</li>
-                        ...
-                    </ul>
-                </section>
-            </section>
-            <section class="decklist__column">
-                <section>
-                    <h6>Spells</h6>
-                    <ul>
-                        <li>4 Chord of Calling</li>
-                        <li>4 Collected Company</li>
-                        ...
-                    </ul>
-                </section>
-                <section class="decklist__sideboard">
-                    <h6>Sideboard</h6>
-                    <ul>
-                        <li>3 Path to Exile</li>
-                        <li>1 Reclamation Sage</li>
-                        ...
-                    </ul>
-                </section>
-            </section>
-            <div class="medium-view-cf"></div>
-            <section class="decklist__image"></section>
-        </main>
-    </figure>
+### Blog Header
 
-The four sections (Creatures, Spells, Lands, Sideboard) can be arranged in whichever way works best between the two `decklist__column` sections.
+    <link rel="stylesheet" href="/assets/css/ghost-mtg.min.css">
+
+### Blog Footer
+
+    <script src="/assets/js/ghost-mtg.min.js"></script>
+
+## Card Usage
+
+Throughout your blog post, surround any card name with card tags (e.g. `<card>Tarmogoyf</card>`) to turn the card name into a Gatherer link, which also displays the card image on hover.
+
+## Decklist Usage
+
+To put decklists into your posts, first just write out your decklist using fairly normal Ghost Markdown as formatted below.
+
+    Deck Name
+
+    Player Name
+
+    Creatures
+    - 3 Scavenging Ooze
+    - 4 Tarmogoyf
+    ...
+
+    Spells
+    - 4 Fatal Push
+    - 3 Liliana of the Veil
+    ...
+
+    Lands
+    - 2 Creeping Tar Pit
+    - 4 Verdant Catacombs
+    ...
+
+    Sideboard
+    - 1 Ashiok, Nightmare Weaver
+    - 1 Damnation
+    ...
+
+After you've finished writing out the decklist like this, simply surround the list with `<decklist>` tags, with blank lines around them.
+
+    <decklist>
+
+    Deck Name
+    ...
+    Sideboard
+    ...
+
+    </decklist>
+
+The code is pretty rigid in its current form, and might not work correctly if formatting doesn't match what it expects. If for some reason it fails though, your decklist should remain as a reasonable looking HTML unordered list.
 
 ## Copyright & License
 
 The MIT License (MIT)
 
-Copyright (c) 2017 Steven Indzeoski
+Copyright (c) 2018 Steven Indzeoski
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
