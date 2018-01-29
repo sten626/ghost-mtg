@@ -1,4 +1,4 @@
-.post-content card img {
+.post-full-content card img {
   display: none;
   max-width: 150px;
   position: absolute;
@@ -6,7 +6,7 @@
 }
 
 @media (min-width: 900px) {
-  .post-content card img {
+  .post-full-content card img {
     max-width: 126%;
   }
 }
