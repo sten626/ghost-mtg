@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [2.0.1] - 2018-01-28
 
 ### Added
 
@@ -73,7 +73,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Hovering over a card in the decklist on desktop will update the card preview, while clicking on the name will open Gatherer in a new tab.
 - On mobile, tapping once will have the effect on hovering, while tapping a second time is like clicking.
 
-[Unreleased]: https://github.com/sten626/ghost-mtg/compare/2.0...develop
+[Unreleased]: https://github.com/sten626/ghost-mtg/compare/2.0.1...develop
+[2.0.1]: https://github.com/sten626/ghost-mtg/compare/2.0...2.0.1
 [2.0]: https://github.com/sten626/ghost-mtg/compare/1.2...2.0
 [1.2]: https://github.com/sten626/ghost-mtg/compare/1.1.0...1.2
 [1.1]: https://github.com/sten626/ghost-mtg/compare/1.0...1.1.0
