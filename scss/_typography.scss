@@ -3,5 +3,22 @@
   	font-size: 1.4rem;
   	line-height: 1.75em;
     list-style: none;
+
+    a {
+      box-shadow: unset;
+      vertical-align: middle;
+    }
+
+    &.decklist__section-header {
+      font-weight: bold;
+    }
+  }
+
+  .decklist__author {
+    font-size: 0.8em;
+  }
+
+  .decklist__name {
+    font-weight: bold;
   }
 }
