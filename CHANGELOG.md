@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+
+### Changed
+
+- Adding version number to css and js file names in `dist` folder.
+
+### Fixed
+
+- Making js compile script create the folders if they don't exist instead of crashing.
+
 ## [2.0] - 2018-01-28
 
 ### Changed
