@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- `js-clean` and `css-clean` npm scripts for cleaning up the `dist` folder.
+
 ### Changed
 
 - Adding version number to css and js file names in `dist` folder.
