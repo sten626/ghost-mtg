@@ -38,15 +38,15 @@
   "devDependencies": {
     "autoprefixer": "^7.2.5",
     "clean-css-cli": "^4.1.10",
-    "eslint": "^4.15.0",
+    "eslint": "^4.16.0",
     "node-sass": "^4.7.2",
     "nodemon": "^1.14.11",
     "npm-run-all": "^4.1.2",
     "postcss-cli": "^4.1.1",
     "sass-lint": "^1.12.1",
-    "uglify-js": "^3.3.7"
+    "uglify-js": "^3.3.9"
   },
   "dependencies": {
-    "jquery": "^3.3.0"
+    "jquery": "^3.3.1"
   }
 }
