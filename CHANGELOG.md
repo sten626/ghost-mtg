@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+- Changed the styles to be compatible with the new version of Casper and Ghost 1.0.
+
+### Removed
+
+- Hacky JS code for touch stuff. Will revist in the future hopefully with something better.
+
 ## [1.2] - 2017-07-10
 
 ### Added
