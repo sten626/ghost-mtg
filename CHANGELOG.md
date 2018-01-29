@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 - Making js compile script create the folders if they don't exist instead of crashing.
+- Changing links and card image addresses to make the scheme of the host site (eg. https).
 
 ## [2.0] - 2018-01-28
 
