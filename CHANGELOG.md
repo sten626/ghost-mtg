@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-- Adding version number to css file names in `dist` folder.
+- Adding version number to css and js file names in `dist` folder.
 
 ### Fixed
 
