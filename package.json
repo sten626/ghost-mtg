@@ -17,7 +17,8 @@
   ],
   "author": "Steven Indzeoski",
   "scripts": {
-    "css": "npm-run-all css-lint css-compile css-prefix css-minify",
+    "css": "npm-run-all css-lint css-clean css-compile css-prefix css-minify",
+    "css-clean": "rm -r dist/css || true",
     "css-compile": "node-sass --output-style expanded --source-map true --precision 6 scss/main.scss dist/css/ghost-mtg-${npm_package_version}.css",
     "css-lint": "sass-lint",
     "css-minify": "cleancss --source-map --output dist/css/ghost-mtg-${npm_package_version}.min.css dist/css/ghost-mtg-${npm_package_version}.css",
