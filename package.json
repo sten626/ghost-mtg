@@ -1,6 +1,6 @@
 {
   "name": "ghost-mtg",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Ghost customization for having responsive MtG deck lists in blog posts.",
   "repository": {
     "type": "git",
@@ -17,15 +17,17 @@
   ],
   "author": "Steven Indzeoski",
   "scripts": {
-    "css": "npm-run-all css-lint css-compile css-prefix css-minify",
-    "css-compile": "node-sass --output-style expanded --source-map true --precision 6 scss/main.scss dist/css/ghost-mtg.css",
+    "css": "npm-run-all css-lint css-clean css-compile css-prefix css-minify",
+    "css-clean": "rm -r dist/css || true",
+    "css-compile": "node-sass --output-style expanded --source-map true --precision 6 scss/main.scss dist/css/ghost-mtg-${npm_package_version}.css",
     "css-lint": "sass-lint",
-    "css-minify": "cleancss --source-map --output dist/css/ghost-mtg.min.css dist/css/ghost-mtg.css",
+    "css-minify": "cleancss --source-map --output dist/css/ghost-mtg-${npm_package_version}.min.css dist/css/ghost-mtg-${npm_package_version}.css",
     "css-prefix": "postcss --replace dist/css/*.css",
-    "js": "npm-run-all js-lint js-compile js-minify",
-    "js-compile": "cp js/ghost-mtg.js dist/js/",
+    "js": "npm-run-all js-lint js-clean js-compile js-minify",
+    "js-clean": "rm -r dist/js || true",
+    "js-compile": "test -d dist/js || mkdir -p dist/js && cp js/ghost-mtg.js dist/js/ghost-mtg-${npm_package_version}.js",
     "js-lint": "eslint js/",
-    "js-minify": "uglifyjs dist/js/ghost-mtg.js --compress --mangle --comments --output dist/js/ghost-mtg.min.js",
+    "js-minify": "uglifyjs dist/js/ghost-mtg-${npm_package_version}.js --compress --mangle --comments --output dist/js/ghost-mtg-${npm_package_version}.min.js",
     "watch": "npm-run-all --parallel watch-css watch-js",
     "watch-css": "nodemon --ignore js/ --ignore dist -e scss -x \"npm run css\"",
     "watch-js": "nodemon --ignore scss/ --ignore dist/ -e js -x \"npm run js\""
@@ -38,15 +40,15 @@
   "devDependencies": {
     "autoprefixer": "^7.2.5",
     "clean-css-cli": "^4.1.10",
-    "eslint": "^4.15.0",
+    "eslint": "^4.16.0",
     "node-sass": "^4.7.2",
     "nodemon": "^1.14.11",
     "npm-run-all": "^4.1.2",
     "postcss-cli": "^4.1.1",
     "sass-lint": "^1.12.1",
-    "uglify-js": "^3.3.7"
+    "uglify-js": "^3.3.9"
   },
   "dependencies": {
-    "jquery": "^3.3.0"
+    "jquery": "^3.3.1"
   }
 }
