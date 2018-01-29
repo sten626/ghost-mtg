@@ -105,7 +105,8 @@
   var first = true;
 
   $decklist.find('li').each(function() {
-    var li = $(this).html();
+    var $li = $(this);
+    var li = $li.html();
     var result = DECK_LI_REGEX.exec(li);
 
     if (!result) {
@@ -117,8 +118,9 @@
     var cardName = result[2];
     var cardNameLinkTag = cardNameToLink(cardName);
 
-    $(this).html(num + ' ' + cardNameLinkTag);
-    $(this).attr('data-name', cardName);
+    $li.html(num + ' ' + cardNameLinkTag);
+    $li.addClass('decklist__card');
+    $li.attr('data-name', cardName);
 
     if (first) {
       $decklistImage.append('<img src="' + GATHERER_IMAGE_URL + '&name=' + encodeURIComponent(cardName) + '">');
@@ -126,7 +128,7 @@
     }
   });
 
-  $decklist.find('li').mouseover(function() {
+  $decklist.find('li.decklist__card').mouseover(function() {
     var name = $(this).attr('data-name');
     var src = GATHERER_IMAGE_URL + '&name=' + encodeURIComponent(name);
 
