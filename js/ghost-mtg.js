@@ -3,8 +3,8 @@
   'use strict';
 
   var DECK_LI_REGEX = /^(\d+)\s(.+)$/;
-  var GATHERER_IMAGE_URL = '//gatherer.wizards.com/Handlers/Image.ashx?type=card';
-  var GATHERER_SEARCH_URL = '//gatherer.wizards.com/pages/search/default.aspx';
+  var GATHERER_IMAGE_URL = 'http://gatherer.wizards.com/Handlers/Image.ashx?type=card';
+  var GATHERER_SEARCH_URL = 'http://gatherer.wizards.com/pages/search/default.aspx';
 
   function cardNameToLink(cardName) {
     var param = 'name=' + encodeURIComponent('+["' + cardName + '"]');

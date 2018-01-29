@@ -1,6 +1,6 @@
 {
   "name": "ghost-mtg",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Ghost customization for having responsive MtG deck lists in blog posts.",
   "repository": {
     "type": "git",
