@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Making js compile script create the folders if they don't exist instead of crashing.
 - Changing links and card image addresses to make the scheme of the host site (eg. https).
+- Decklist no longer displays Magic card back when you mouse over a section header.
 
 ## [2.0] - 2018-01-28
 
