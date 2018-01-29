@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 - Changed the styles to be compatible with the new version of Casper and Ghost 1.0.
+- A much needed README update.
 
 ### Removed
 
